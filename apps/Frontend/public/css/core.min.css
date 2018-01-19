@@ -1,0 +1,1 @@
+#tb_svg_container:before,#tb_svg_container:after{display:block;content:' ';clear:both}#tb_svg_container > .tb_wpc_template_container{position:relative}#tb_svg_container > .tb_wpc_template_container > svg{position:absolute}#tb_svg_container > .tb_wpc_template_container > svg:first-child{z-index:1000}.tb_wpc_text_center{text-align:center}

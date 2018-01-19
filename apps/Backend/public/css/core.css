@@ -1,0 +1,35 @@
+#templateSave {
+    margin: -6px -12px -12px;
+}
+
+.tb-wpc-text-center {
+    text-align: center;
+}
+
+.tb-wpc-metabox-footer {
+    padding: 10px;
+    clear: both;
+    background: #f5f5f5;
+    border-top: 1px solid #ddd;
+    text-align: right;
+    margin: 15px -12px -12px;
+}
+
+#tb_pc_svg_templates_svgTemplates h3 small,
+#product_colorizer_tab h4 small {
+    float: right;
+}
+
+#tb_pc_svg_templates_svgTemplates h3 small a,
+#product_colorizer_tab h4 small a {
+    color: red;
+}
+
+#tb_pc_svg_templates_svgTemplates h3:after {
+    content: ' ';
+    clear: both;
+}
+
+#product_colorizer_tab .tb_wpc_padding{
+    padding: 5px 10px;
+}
