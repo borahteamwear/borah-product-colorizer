@@ -684,7 +684,8 @@ var TB_ProductColorizer = function($)
         $(tb_wpc.templates.selector).prepend('<option value="" selected="selected">Choose a Style</option>');
 
         var $inputQty   = cache.get('form.cart .quantity > input[type="number"][name="quantity"].qty'),
-            $qtyInputs  = $('input.tb_wpc_qty')
+            $qtyInputs  = $('input.tb_wpc_qty'),
+            $cartForm   = $('form[class="cart"][enctype="multipart/form-data"]')
         ;
 
         $inputQty.val('0');
@@ -732,6 +733,35 @@ var TB_ProductColorizer = function($)
         {
             that.overridePrices();
         });
+
+        $cartForm.on('submit', function(e)
+        {
+            var uploadedFile    = $(tb_wpc.fileUploadInput).val(),
+                extension       = getFileExtension(uploadedFile)
+            ;
+
+            if (uploadedFile.length === 0 || extension ===  tb_wpc.allowedFile)
+            {
+                return true;
+            }
+
+            e.preventDefault();
+
+            setTimeout(function()
+            {
+                $('#flasho, .fl-overlay').remove();
+                $cartForm.find('button[type="submit"]').removeClass('disabled');
+            }, 2000);
+
+            return false;
+        });
+    };
+
+    var getFileExtension = function(fileName)
+    {
+        var regex       = /(?:\.([^.]+))?$/;
+
+        return regex.exec(fileName)[1];
     };
 
     var hideAddToCartButtonForQty = function()

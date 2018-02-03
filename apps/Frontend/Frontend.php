@@ -124,6 +124,9 @@ class Frontend extends BaseDIAware
                     'products'  => $metaData->getProductSelector(),
                 ],
                 'discounts'             => $this->getDiscounts($metaData),
+                // Hard-coded to get the requirements done fast so we
+                'fileUploadInput'       => 'input[type="file"].tm-epo-field.tmcp-upload',
+                'allowedFile'           => 'zip',
             ]
         );
     }
