@@ -1,0 +1,18 @@
+# Pages
+rewrite ^/about-us/(.*)/$ /$1/ permanent;
+
+# Collections
+rewrite ^/rally-cycling/$ /rally-cycling-collection/ permanent;
+rewrite ^/product-category/shop/cycling/$ /product-category/collections/cycling-collection/ permanent;
+rewrite ^/product-category/shop/(.*)/$ /product-category/collections/$1/ permanent;
+
+# Products
+rewrite ^/shop/cycling/borah-ambassador-(.*)/$  /product/$1/ permanent;
+
+# Catch-all Products
+rewrite ^/shop/(.*)/(.*)/$ /product/$2/ permanent;
+
+# Team Stores
+rewrite ^/team-store/borah-(.*)/$ /$1/ permanent;
+rewrite ^/team-store/freemasons/$ /product-category/freemasons-team-store/ permanent;
+rewrite ^/team-store/(.*)/$ /product-category/$1/ permanent;
